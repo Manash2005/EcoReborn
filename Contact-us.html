@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dde9f1;
+            
+            /* display: grid; */
+            /* grid-template-columns: 7fr 5frpx; */
+        }
+        .container {
+            width: 40%;
+            margin: 0 auto;
+            background-color: #d6f4eb;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #241e1e;
+            box-shadow: 4px 3px 0.4em;
+            padding: 10px;
+
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            
+        }
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #29124e;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background-color: rgb(231, 210, 107);
+            color: rgb(37, 31, 31);
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 4px 0.2em;
+        }
+        button:hover {
+            background-color: #efd12bdd;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action="submit_form.php" method="POST">
+
+             <!-- Message Field -->
+             <label for="message">Tell us more and we will find the best solution for you:</label>
+             <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+ 
+            <!-- Name Field -->
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+            <!-- Email Field -->
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+           
+            <!-- Submit Button -->
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    
+
+</body>
+</html>
