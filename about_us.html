@@ -14,14 +14,63 @@ body {
     background-color: #f4f4f9;
     color: #333;
 }
-
+/* adding header css */
 header {
-    text-align: center;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: white;
-}
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            color: white;
+            margin-top: -3em;
+            /* border-bottom: 2px solid #ddd; */
+        }
+        .logo-img {
+            width: 15%;
+            height: 15%;
+            /* margin-top: -40px; */
+            /* border: 1px solid black; */
+        }
 
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: black;
+            /* background-color: #128C7E; */
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #45a049;
+            font-size: 20px;
+        }
+
+         .sub-head {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            
+         }
+    
 header h1 {
     margin: 0;
     font-size: 2.5em;
@@ -81,13 +130,37 @@ header h1 {
 .hidden {
     visibility: hidden;
 }
+/* Adding header to the file */
+.about-us{
+    margin-top: -40px;
+}
+
+
 
     </style>
 </head>
 <body>
     <header>
-        <h1 class="fade-in">About Us</h1>
+        <!-- Logo Section -->
+        <img src="images/Reborn.png" alt="logo" class="logo-img">
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="bi bi-house">&nbsp; Home</a></li>
+                <li><a href="home-decor.html">Home Decor</a></li>
+                <li><a href="compost.html">Compost</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="cart.html" class="bi bi-cart"> cart</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <div class="about-us">
+    <div class="sub-head">
+        <h1 class="fade-in">About Us</h1>
+    </div>
     <section class="about-section">
         <div class="about-content slide-up">
             <h2>Our Mission</h2>
@@ -124,6 +197,6 @@ header h1 {
             revealOnScroll(); // Trigger on page load
         });
         </script>
-
+    </div>
 </body>
 </html>
