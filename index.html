@@ -1,36 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waste to Wonder</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html" class="animated-link">Home</a></li>
-            <li><a href="compost.html" class="animated-link">Compost</a></li>
-            <li><a href="crafts.html" class="animated-link">Crafts & Home Decor</a></li>
-        </ul>
-    </nav>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style type="text/css">
+        /* Basic styles for the header */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(images/background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-    <!-- Welcome Section -->
-    <section id="about" class="fade-in1">
-        <div class="headline">  
-            <h1>Waste to Wonder</h1>
-            <p>Transforming waste into eco-friendly products like compost, fertilizers, and unique crafts for your home.</p>
-        </div>
-        <div class="landing-page-image">
-            <img src="images/lannding_page.jpeg" alt="This image cannot be displayed">
-        </div>
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgb(44, 120, 44); /* Green background */
+    height: 20px;
+}
+
+.logo-img {
+    max-height: 60px; /* Adjust the size of the logo */
+}
+
+nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    background-color: darkgreen;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    border-radius: 5px;
+    font-size: 19px;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+   h2{
+    border: 1px solid b;
+   }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Landing Page Header Section -->
+    <header>
+        <!-- Logo Section -->
+        <h2>EcoReborn</h2>
+
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="bi bi-house">&nbsp; Home</a></li>
+                <li><a href="home-decor.html">Home Decor</a></li>
+                <li><a href="home-decor.html">Compost</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--section-->
+    <section class="main">
+        
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Waste to Wonder. All Rights Reserved.</p>
-    </footer>
+</body>
 
-    </body>
 </html>
