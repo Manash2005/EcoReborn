@@ -7,27 +7,38 @@
     <title>Crafts And Decor</title>
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-
 </head>
 
 <body>
-<main>
-    <div class="button1">
-        <button class="checkout" id="cart" onclick="cart();"></button>
-    </div>
+     <!-- Landing Page Header Section -->
+     <header>
+        <!-- Logo Section -->
+        <img src="images/Reborn.png" alt="logo" class="logo-img">
 
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="bi bi-house">&nbsp; Home</a></li>
+                <li><a href="home-decor.html">Home Decor</a></li>
+                <li><a href="compost.html">Compost</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="cart.html" class="bi bi-cart" one-click="()"> cart</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
     <section>
         <div class="card">
             <img src="images/Upcycledwoodenvase.webp" alt="craft1" class="vase">
             <h3>Upcycled Wood Vase</h3>
             <p>Min 10% Off</p>
             <div class="price">
-                <span class="del"><del>&#8377;</del></span>
+                <span class="del"><del>&#8377;554</del></span>
                 <span class="strike">&#8377;499</span>
             </div>
             <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" on-click="addToCart">Add to cart</button>
             </div>
         </div>
         </div>
@@ -178,158 +189,24 @@
         </div>
         </div>
 
-        <div class="card">
-            <img src="images/Coconut shell.jpg" alt="craft1" class="vase">
-            <h3>Coconut Shell Candle Holder</h3>
-            <p>Min 30% Off</p>
-            <div class="price">
-                <span class="del"><del>&#8377;500</del></span>
-                <span class="strike">&#8377;150</span>
-            </div>
-            <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add to cart</button>
-            </div>
-        </div>
-        </div>
 
 
     </section>
-    <section>
-        <div class="card">
-            <img src="images/Upcycledwoodenvase.webp" alt="craft1" class="vase">
-            <h3>Upcycled Wood Vase</h3>
-            <p>Min 50% Off</p>
-            <div class="price">
-                <span class="del"><del>&#8377;500</del></span>
-                <span class="strike">&#8377;250</span>
-            </div>
-            <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add to cart</button>
-            </div>
-        </div>
-        </div>
-
-        <div class="card">
-            <img src="images/3D WALL ART FROM COCONUT LEAVES STICK.jpg" alt="craft1" class="vase">
-            <h3>Coconut Leaves Stick</h3>
-            <p>Min 10% Off</p>
-            <div class="price">
-                <span class="del"><del>&#8377;1000</del></span>
-                <span class="strike">&#8377;900</span>
-            </div>
-            this one
-            <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart" onclick="fun(); ">Add to cart</button>
-            </div>
-        </div>
-        </div>
-
-        <div class="card">
-            <img src="images/Palm Leaf Wall Hanging.jpg" alt="craft1" class="vase">
-            <h3>Palm Leaf Wall Hanging</h3>
-            <p>Min 25% Off</p>
-            <div class="price">
-                <span class="del"><del>&#8377;700</del></span>
-                <span class="strike">&#8377;525</span>
-            </div>
-            <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add to cart</button>
-            </div>
-        </div>
-        </div>
-
-        <div class="card">
-            <img src="images/Coconut shell.jpg" alt="craft1" class="vase">
-            <h3>Coconut Shell Candle Holder</h3>
-            <p>Min 30% Off</p>
-            <div class="price">
-                <span class="del"><del>&#8377;500</del></span>
-                <span class="strike">&#8377;150</span>
-            </div>
-            <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add to cart</button>
-            </div>
-        </div>
-        </div>
-
-
-    </section>
+    
 </main>
 
 
     <script>
-        function cart() {
-            document.getElementById("cart").innerHTML= localStorage.getItem(cart);
-        }
-        function fun() {
-          // Retrieve the cart from localStorage or initialize an empty array if none exists
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+function addToCart() {
 
-    // Add the item to the cart array
-    cart.push(item);
+}
 
-    // Store the updated cart in localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Optionally, update the cart display
-    updateCartDisplay();
-        }
         // Get all the "Buy Now" and "Add to Cart" buttons
         const buyNowButtons    = document.querySelectorAll('.buy-now');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');
     
         // Item data for each product (for illustration purposes)
-        const items = [
-            { id: 1, name: 'Upcycled Wood Vase', price: 899 },
-            { id: 2, name: 'Coconut Leaves Stick', price: 249 },
-            { id: 3, name: 'Palm Leaf Wall Hanging', price: 399 },
-            { id: 4, name: 'Coconut Shell Candle Holder', price: 149 },
-            { id: 5, name: 'Creative Plastic Bottle', price: 89 },
-            { id: 6, name: 'Paper Lamp', price: 449 },
-            { id: 7, name: 'Romantic Orange Rose', price: 29 },
-            { id: 8, name: 'Egg Shell Craft', price: 149 },
-            { id: 9, name: 'Paper Leaf Wall Hanging', price: 199 },
-            { id: 10, name: 'Glass Bottle Plant Hangings', price: 143 },
-            { id: 11, name: 'Farmer Sculpture', price: 525 },
-            { id: 12, name: 'Coconut Shell Candle Holder', price: 150 }
-        ];
-    
-        // Add event listener for "Buy Now" buttons
-        buyNowButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Redirect to the checkout page
-                window.location.href = 'checkout.html';
-            });
-        });
-    
-        // Add event listener for "Add to Cart" buttons
-        addToCartButtons.forEach((button, index) => {
-            button.addEventListener('click', () => {
-                // Get the corresponding item for this button
-                const item = items[index];
-    
-                // Store the item in localStorage
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                cart.push(item);
-
-                localStorage.setItem('cart', JSON.stringify(cart));
-    
-                // Change button text to "Added"
-                button.textContent = 'Added';
-    
-                // Optionally, disable the button to prevent further clicks
-                button.disabled = true;
-    
-                // Change the button color to indicate it has been clicked
-                button.style.backgroundColor = '#888'; // Change color to grey or any other indication
-    
-                // Display a custom success message in an alert
-                alert(`${item.name} has been successfully added to your cart!`);
-    
-            });
-        });
     </script>
-    
 </body>
 
 </html>

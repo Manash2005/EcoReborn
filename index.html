@@ -1,159 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waste to Wonder</title>
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <style type="text/css">
-        /* Basic styles for the header */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Your Custom Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
 
-}
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            color: white;
+            margin-top: -3em;
+            /* border-bottom: 2px solid #ddd; */
+        }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    /* background-color: rgb(161, 118, 53); Green background */
-    height: 20px;
-    border-bottom: 1px solid gray;
-}
+        .logo-img {
+            width: 15%;
+            height: 15%;
+            /* margin-top: -40px; */
+            /* border: 1px solid black; */
+        }
 
-.logo-img {
-    max-height: 60px; /* Adjust the size of the logo */
-}
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
 
-nav {
-    flex-grow: 1;
-    text-align: right;
-}
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
 
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-end;
-}
+        .nav-links li {
+            margin-left: 20px;
+        }
 
-.nav-links li {
-    margin-left: 20px;
-}
+        .nav-links a {
+            color: black;
+            /* background-color: #128C7E; */
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+        }
 
-.nav-links a {
-    color: white;
-    background-color: rgb(128, 92, 13);
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 8px;
-    transition: all 0.3s ease;
-}
+        .nav-links a:hover {
+            background-color: #45a049;
+            font-size: 20px;
+        }
 
-.nav-links a:hover {
-    background-color: #45a049; /* Darker green on hover */
-    border-radius: 5px;
-    font-size: 19px;
-}
+        .slogan {
+            font-weight: bold;
+            font-size: 50px;
+            height: 50%;
+            font-family: sans-serif;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000000;
+            margin-top: -40px;
+            color: #e6e6e6;
+            background-image: url(images/background-image.jpeg);
+            background-size:cover ;
+            border: 2px solid black;
+        }
 
-/* Mobile responsive styles */
+        .company-name {     
+            color: green;
+            font-size: 26px;
+        }
 
-   h2{
-    border: 1px solid b;
-   }
-   .main-section{
-    display: grid;
-    grid-template-columns: 4fr 8fr;
-   }
-   div{
-    /* border: 1px solid red; */
-   }
-   .information{
-    text-align: center;
-   }
-   .moto{
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-    line-height: 25px;
-    word-spacing: 2px;
-    margin-top: 100px;
-   }
-   .slogan{
-    font-weight: bolder;
-    font-size: 50px;
-    font-family: sans-serif;
-    text-align: center;
-   }
-   .company-name{
-    color: green;
-    font-size: 26px;
-   }
-   .our-work{
-    text-align: justify;
-    padding: 8px;
-    line-height: 22px;
-   }
-   .reuse-image{
-    padding: 10px;
-   }
-   .items{
-    color: red;
-    font-weight: bold;
-   }
-   .slogan2{
-    color: red;
-    font-weight: bold;
-   }
-   .recycle-image{
-    border-radius: 10px;
-    height: 80%;
-   }
-   .word{
-    transition: all 0.3s ease
-   }
-   .word:hover{
-    font-size: 65px;
-    color: green;
-   }
-   /* Hide images by default */
-.mySlides {
-  display: none;
-}
+        .information {
+            text-align: center;
+            margin-top: 30px;
+        }
 
-/* Fade-in effect */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
+        .moto {
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            line-height: 25px;
+            word-spacing: 2px;
+        }
 
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
+        .our-work {
+            text-align: justify;
+            padding: 15px;
+            line-height: 22px;
+        }
 
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-.mySlides {
-    padding: 20px;
-    margin-left: 40px;
-    border: 3px solid green;
-    border-radius: 10px;
-}
-.text-overlay {
+        .reuse-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .text-overlay {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -162,44 +116,72 @@ nav {
             font-size: 24px;
             font-weight: bold;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.5); /* Optional: background for better readability */
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
             border-radius: 5px;
         }
-        .text-slideshow-container {
-            width: 100%;
-            max-width: 800px;
-            margin: auto;
-            position: relative;
-            height: 100px; /* Adjust this height based on the text size */
+
+        .mySlides {
+            display: none;
+            padding: 20px;
+            margin-left: 40px;
+            border: 3px solid #4CAF50;
+            border-radius: 10px;
         }
 
-        /* Hide all text slides by default */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            padding-top: 40px;
+        }
+
+        .stats {
+            text-align: center;
+            margin-top: 50px;
+        }
+
         .text-slide {
-            display: none;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             color: #333;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
-        /* Show the active slide */
         .active {
             display: block;
             opacity: 1;
         }
-        .stats{
+
+        .word {
+            transition: all 0.3s ease;
         }
-        
+
+        .word:hover {
+            font-size: 65px;
+            color: rgb(128, 0, 0);
+        }
+
+        .btn-custom {
+            background-color: #128C7E;
+            color: white;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
-
 <body>
     <!-- Landing Page Header Section -->
     <header>
         <!-- Logo Section -->
-        <h2>EcoReborn</h2>
+        <img src="images/Reborn.png" alt="logo" class="logo-img">
 
         <!-- Navigation Menu -->
         <nav>
@@ -207,109 +189,91 @@ nav {
                 <li><a href="index.html" class="bi bi-house">&nbsp; Home</a></li>
                 <li><a href="home-decor.html">Home Decor</a></li>
                 <li><a href="compost.html">Compost</a></li>
-                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="about_us.html">About Us</a></li>
                 <li><a href="contact-us.html">Contact Us</a></li>
-                <li><a href="cart.html" class="bi bi-cart">cart</a></li>
+                <li><a href="cart.html" class="bi bi-cart"> cart</a></li>
             </ul>
         </nav>
     </header>
 
-    <!--section-->
-    <p class="slogan"> <span class="word">Waste</span> <span class="word">to</span><span class="word"> Wonder !</span></p>
-    <section class="main-section">
-        <div class="reuse-image">
-            <img src="images/recyle-reuse.avif" alt="This image cannot be displayed" class="recycle-image">
+    <!-- Slogan Section -->
+    <p class="slogan"> <span class="word">Waste</span> <span class="word">to</span> <span class="word">Wonder!</span></p>
+    
+    <!-- Image Slideshow Section -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="information">
-            <p class="moto"><span class="company-name">EcoReborn</span> is a platform that promotes the idea of recycling and reusing waste materials to create
-                beautiful and useful products.
-            </p>
-            <p class="our-work"> We believe that waste is not waste until it is wasted. Our products are
-                made from waste materials such as <span class="items"> plastic, paper, glass, and metal.</span> We aim to create awareness about the
-                importance of recycling and reusing waste materials to protect the environment and reduce waste
-                generation. Our products are eco-friendly, sustainable, and affordable. Join us in our mission to turn
-                <span class="slogan2">waste into wonder!</span>
-            </p>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/background-image.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/compost.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/eco-friendly-product.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Main Section -->
+    <section class="main-section d-flex justify-content-between container my-5">
+        <div class="reuse-image col-md-6">
+            <img src="images/recyle-reuse.avif" alt="Recycling and Reusing" class="recycle-image">
+        </div>
+        <div class="information col-md-6">
+            <p class="moto"><span class="company-name">EcoReborn</span> is a platform that promotes the idea of recycling and reusing waste materials to create beautiful and useful products.</p>
+            <p class="our-work">We believe that waste is not waste until it is wasted. Our products are made from waste materials such as <span class="items">plastic, paper, glass, and metal.</span> We aim to create awareness about the importance of recycling and reusing waste materials to protect the environment and reduce waste generation. Join us in our mission to turn <span class="slogan2">waste into wonder!</span></p>
         </div>
     </section>
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="images/compost2.jpg" style="width:90%">
-            <div class="text-overlay">Compost Made from Recycled Waste</div>
-        </div>
-        <div class="mySlides fade">
-            <img src="images/eco-friendly-product.jpg" style="width:90%">
-            <div class="text-overlay">Eco-Friendly Products for a Sustainable Future</div>
-        </div>
-        <div class="mySlides fade">
-            <img src="images/garbage-dump.jpg" style="width:90%">
-            <div class="text-overlay">Reducing Waste Through Recycling</div>
-        </div>
-    </div>
-    <hr>
+
+    <!-- Statistics Section -->
     <div class="stats">
-
         <h1>Statistics</h1>
-        <div class="text-slideshow-container" >
-            <div class="text-slide active" >The amount of food wasted in Indian households every year could feed almost 377 million people.</div>
-            <div class="text-slide">India generates around 62 million tons of waste each year</div>
-            <div class="text-slide">In 2022 there were 1.05 billion tonnes of food waste generated</div>
-            <div class="text-slide">In India, about 43 million tons of waste are collected out of the total 62 million tons that are generated annually</div>
+        <div class="text-slideshow-container">
+            <div class="text-slide active">The amount of food wasted in Indian households every year could feed almost 377 million people.</div>
+            <div class="text-slide">India generates around 62 million tons of waste each year.</div>
+            <div class="text-slide">In 2022 there were 1.05 billion tonnes of food waste generated.</div>
+            <div class="text-slide">In India, about 43 million tons of waste are collected out of the total 62 million tons that are generated annually.</div>
         </div>
     </div>
+
     <hr>
-    <br>
-
-
-    
     <script>
-      window.onload = function () {
-    let slideIndex = 0;
-    let textIndex = 0;
-
-    // Image slideshow function
-    function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+        // Function to show the slides
+        function showSlides() {
+            let slides = document.querySelectorAll('.text-slide');
+            let currentIndex = 0;
+    
+            function displayNextSlide() {
+                slides[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % slides.length;
+                slides[currentIndex].classList.add('active');
+            }
+    
+            // Initial display
+            slides[currentIndex].classList.add('active');
+    
+            // Change slide every 5 seconds
+            setInterval(displayNextSlide, 4000);
         }
-
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-
-        slides[slideIndex - 1].style.display = "block";  
-        setTimeout(showSlides, 3500); // Change image every 3.5 seconds
-    }
-
-    // Text slideshow function
-    function showTextSlides() {
-        const slides = document.querySelectorAll('.text-slide');
-        
-        // Hide all slides by default
-        slides.forEach(slide => slide.classList.remove('active'));
-
-        // Show the next slide
-        textIndex++;
-        if (textIndex > slides.length) {
-            textIndex = 1;
-        }
-
-        slides[textIndex - 1].classList.add('active');
-        setTimeout(showTextSlides, 3500); // Change text every 3 seconds
-    }
-
-    // Start both slideshows
-    showSlides();
-    showTextSlides();
-}
-
-      
+    
+        // Call the function to start the slideshow
+        document.addEventListener('DOMContentLoaded', showSlides);
     </script>
-      
 
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

@@ -1,59 +1,79 @@
+<!-- cart.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Your Cart</title>
 </head>
-
 <body>
-    <h1>Checkout Page</h1>
-
-    <div id="cart-items">
-        <!-- Cart items will be displayed here -->
-    </div>
-
-    <div id="total">
-        <h3>Total: ₹<span id="total-price">0</span></h3>
-    </div>
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+<<<<<<< HEAD
+    <button onclick="clearCart()">Clear Cart</button>
+    <button onclick="goBack()">Continue Shopping</button>
 
     <script>
-        // Retrieve cart data from localStorage
+        // Fetch cart items from localStorage
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // Get the container where cart items will be displayed
         const cartItemsContainer = document.getElementById('cart-items');
-        let totalPrice = 0;
 
-        // Check if there are items in the cart
+        // Display cart items
         if (cart.length > 0) {
             cart.forEach(item => {
-                // Create a div for each item in the cart
+                const div = document.createElement('div');
+                div.innerHTML = `<h3>${item.name}</h3><p>Price: &#8377;${item.price}</p>`;
+                cartItemsContainer.appendChild(div);
+            });
+        } else {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+        }
+
+        // Clear cart function
+        function clearCart() {
+            localStorage.removeItem('cart');
+            window.location.reload();
+        }
+
+        // Go back to shopping
+        function goBack() {
+            window.location.href = 'index.html';
+=======
+    <p>Total: ₹<span id="total-price">0</span></p>
+    <button id="checkout">Proceed to Checkout</button>
+
+    <script>
+        // Fetch the cart from localStorage
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+
+        // If the cart is empty, show a message
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            let totalPrice = 0;
+
+            // Display each product in the cart
+            cart.forEach(item => {
                 const itemDiv = document.createElement('div');
-                itemDiv.classList.add('cart-item');
-                
-                // Add product name and price to the div
-                itemDiv.innerHTML = `
-                    <p><strong>${item.name}</strong></p>
-                    <p>Price: ₹${item.price}</p>
-                `;
-                
-                // Append item div to the container
+                itemDiv.innerHTML = `<p>${item.name} - ₹${item.price}</p>`;
                 cartItemsContainer.appendChild(itemDiv);
 
-                // Update the total price
+                // Add to the total price
                 totalPrice += item.price;
             });
 
-            // Update total price on the page
-            document.getElementById('total-price').textContent = totalPrice;
-        } else {
-            // If the cart is empty
-            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            // Update the total price display
+            totalPriceElement.textContent = totalPrice;
+>>>>>>> 4fb2d64838daad62959c3819093dc2a25df840a6
         }
+
+        // Checkout button functionality
+        document.getElementById('checkout').addEventListener('click', () => {
+            // Redirect to checkout page
+            window.location.href = 'checkout.html';
+        });
     </script>
 </body>
-
 </html>
