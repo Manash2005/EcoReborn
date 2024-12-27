@@ -11,7 +11,9 @@
         grid-template-columns: 7fr 5fr;
     }
     .img{
-        background-image: url(images/);
+        background-image: url(images/login\ img.jpg);
+        background-repeat: no-repeat;
+        background-position: fixed;
     }
     .sign{
         font-size: 35px;
@@ -40,6 +42,9 @@
     }
     .div~span{
         margin-bottom: 20px;
+    }
+    .option .signin{
+        padding-left: 270px;
     }
     </style>
 </head>
@@ -79,14 +84,14 @@
             <hr>
         </div>
         <div>
-            <span></span>
+            <span class="terms"></span>
             <span>I agree to the <b>terms of user</b></span> <br>
             <br>
         </div>
-        <div>
+        <div class="option">
             <span>sign up &nbsp;&nbsp;</span>
-            <span>sign in </span>
-            <span></span>
+            <span class="signin">sign in </span>
+            <span class="bi-arrow-right"></span>
         </div>
 
     </div>
