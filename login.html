@@ -28,7 +28,6 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         width: 350px;
         border: 1px solid black;
-        /* background-color: gray; */
     }
     
     .login-form h2 {
@@ -86,23 +85,19 @@
     .signup-link a:hover {
         text-decoration: underline;
     }
-    body{
+    
+    body {
         background-image: url(images/login\ img.jpg);
         background-repeat: no-repeat;
-        background-position:center;
+        background-position: center;
         background-size: cover;    
-         opacity: 1; 
-        
-
+        opacity: 1; 
     }
-</style>
-    
+    </style>
 </head>
 <body>
-    <img src="">
-    
     <div class="login-container">
-        <form class="login-form">
+        <form class="login-form" id="loginForm">
             <h2>Login</h2>
             <div class="input-group">
                 <label for="username">Username</label>
@@ -112,9 +107,36 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
             <button type="submit" class="login-btn">Login</button>
-            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+            <p class="signup-link">Don't have an account? <a href="singin.html">Sign up</a></p>
         </form>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            // Get the user's input
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            // Retrieve stored data from localStorage
+            const storedName = localStorage.getItem('name');
+            const storedPassword = localStorage.getItem('password');
+    
+            // Validate credentials
+            if (username === storedName && password === storedPassword) {
+                alert('Login successful!');
+                window.location.href = 'index.html'; // Redirect to the homepage
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+    </script>
+    
 </body>
 </html>

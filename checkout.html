@@ -9,6 +9,36 @@
 <body>
     <h1>Your Cart</h1>
     <div id="cart-items"></div>
+<<<<<<< HEAD
+    <button onclick="clearCart()">Clear Cart</button>
+    <button onclick="goBack()">Continue Shopping</button>
+
+    <script>
+        // Fetch cart items from localStorage
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+
+        // Display cart items
+        if (cart.length > 0) {
+            cart.forEach(item => {
+                const div = document.createElement('div');
+                div.innerHTML = `<h3>${item.name}</h3><p>Price: &#8377;${item.price}</p>`;
+                cartItemsContainer.appendChild(div);
+            });
+        } else {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+        }
+
+        // Clear cart function
+        function clearCart() {
+            localStorage.removeItem('cart');
+            window.location.reload();
+        }
+
+        // Go back to shopping
+        function goBack() {
+            window.location.href = 'index.html';
+=======
     <p>Total: ₹<span id="total-price">0</span></p>
     <button id="checkout">Proceed to Checkout</button>
 
@@ -36,6 +66,7 @@
 
             // Update the total price display
             totalPriceElement.textContent = totalPrice;
+>>>>>>> 4fb2d64838daad62959c3819093dc2a25df840a6
         }
 
         // Checkout button functionality
