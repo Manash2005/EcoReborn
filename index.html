@@ -12,9 +12,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(images/background.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+
 }
 
 header {
@@ -22,8 +20,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: rgb(44, 120, 44); /* Green background */
+    /* background-color: rgb(161, 118, 53); Green background */
     height: 20px;
+    border-bottom: 1px solid gray;
 }
 
 .logo-img {
@@ -49,7 +48,7 @@ nav {
 
 .nav-links a {
     color: white;
-    background-color: darkgreen;
+    background-color: rgb(128, 92, 13);
     border-radius: 20px;
     text-decoration: none;
     font-size: 15px;
@@ -64,24 +63,135 @@ nav {
 }
 
 /* Mobile responsive styles */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    .nav-links {
-        flex-direction: column;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
    h2{
     border: 1px solid b;
    }
+   .main-section{
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+   }
+   div{
+    /* border: 1px solid red; */
+   }
+   .information{
+    text-align: center;
+   }
+   .moto{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    line-height: 25px;
+    word-spacing: 2px;
+    margin-top: 100px;
+   }
+   .slogan{
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: sans-serif;
+    text-align: center;
+   }
+   .company-name{
+    color: green;
+    font-size: 26px;
+   }
+   .our-work{
+    text-align: justify;
+    padding: 8px;
+    line-height: 22px;
+   }
+   .reuse-image{
+    padding: 10px;
+   }
+   .items{
+    color: red;
+    font-weight: bold;
+   }
+   .slogan2{
+    color: red;
+    font-weight: bold;
+   }
+   .recycle-image{
+    border-radius: 10px;
+    height: 80%;
+   }
+   .word{
+    transition: all 0.3s ease
+   }
+   .word:hover{
+    font-size: 65px;
+    color: green;
+   }
+   /* Hide images by default */
+.mySlides {
+  display: none;
 }
 
+/* Fade-in effect */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.mySlides {
+    padding: 20px;
+    margin-left: 40px;
+    border: 3px solid green;
+    border-radius: 10px;
+}
+.text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: background for better readability */
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .text-slideshow-container {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+            height: 100px; /* Adjust this height based on the text size */
+        }
+
+        /* Hide all text slides by default */
+        .text-slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Show the active slide */
+        .active {
+            display: block;
+            opacity: 1;
+        }
+        .stats{
+        }
+        
     </style>
 </head>
 
@@ -96,17 +206,109 @@ nav {
             <ul class="nav-links">
                 <li><a href="index.html" class="bi bi-house">&nbsp; Home</a></li>
                 <li><a href="home-decor.html">Home Decor</a></li>
-                <li><a href="home-decor.html">Compost</a></li>
+                <li><a href="compost.html">Compost</a></li>
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="cart.html" class="bi bi-cart">cart</a></li>
             </ul>
         </nav>
     </header>
 
     <!--section-->
-    <section class="main">
-        
+    <p class="slogan"> <span class="word">Waste</span> <span class="word">to</span><span class="word"> Wonder !</span></p>
+    <section class="main-section">
+        <div class="reuse-image">
+            <img src="images/recyle-reuse.avif" alt="This image cannot be displayed" class="recycle-image">
+        </div>
+        <div class="information">
+            <p class="moto"><span class="company-name">EcoReborn</span> is a platform that promotes the idea of recycling and reusing waste materials to create
+                beautiful and useful products.
+            </p>
+            <p class="our-work"> We believe that waste is not waste until it is wasted. Our products are
+                made from waste materials such as <span class="items"> plastic, paper, glass, and metal.</span> We aim to create awareness about the
+                importance of recycling and reusing waste materials to protect the environment and reduce waste
+                generation. Our products are eco-friendly, sustainable, and affordable. Join us in our mission to turn
+                <span class="slogan2">waste into wonder!</span>
+            </p>
+        </div>
     </section>
+    <hr>
+    <div class="stats">
+
+        <h1>Statistics</h1>
+        <div class="text-slideshow-container" >
+            <div class="text-slide active" >The amount of food wasted in Indian households every year could feed almost 377 million people.</div>
+            <div class="text-slide">India generates around 62 million tons of waste each year</div>
+            <div class="text-slide">In 2022 there were 1.05 billion tonnes of food waste generated</div>
+            <div class="text-slide">In India, about 43 million tons of waste are collected out of the total 62 million tons that are generated annually</div>
+        </div>
+    </div>
+    <hr>
+    <br>
+
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="images/compost2.jpg" style="width:90%">
+            <div class="text-overlay">Compost Made from Recycled Waste</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="images/eco-friendly-product.jpg" style="width:90%">
+            <div class="text-overlay">Eco-Friendly Products for a Sustainable Future</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="images/garbage-dump.jpg" style="width:90%">
+            <div class="text-overlay">Reducing Waste Through Recycling</div>
+        </div>
+    </div>
+    
+    <script>
+      window.onload = function () {
+    let slideIndex = 0;
+    let textIndex = 0;
+
+    // Image slideshow function
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = "block";  
+        setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+    }
+
+    // Text slideshow function
+    function showTextSlides() {
+        const slides = document.querySelectorAll('.text-slide');
+        
+        // Hide all slides by default
+        slides.forEach(slide => slide.classList.remove('active'));
+
+        // Show the next slide
+        textIndex++;
+        if (textIndex > slides.length) {
+            textIndex = 1;
+        }
+
+        slides[textIndex - 1].classList.add('active');
+        setTimeout(showTextSlides, 3500); // Change text every 3 seconds
+    }
+
+    // Start both slideshows
+    showSlides();
+    showTextSlides();
+}
+
+      
+    </script>
+      
 
 </body>
 
