@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style type="text/css">
+        /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* About section */
+.about-section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-content {
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Hover effect */
+.about-content:hover {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(0) scale(1.03);
+}
+
+/* Fade-in header */
+.fade-in {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1s forwards ease-in-out;
+}
+
+/* Slide-up effect */
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.about-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keyframes for header animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Utility for visibility */
+.hidden {
+    visibility: hidden;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="fade-in">About Us</h1>
+    </header>
+    <section class="about-section">
+        <div class="about-content slide-up">
+            <h2>Our Mission</h2>
+            <p>
+                We are dedicated to managing waste effectively and repurposing it into sustainable products 
+                such as organic compost, fertilizers, crafts, and home decor. Our mission is to create 
+                eco-friendly solutions for a greener planet.
+            </p>
+        </div>
+        <div class="about-content slide-up">
+            <h2>Our Vision</h2>
+            <p>
+                To inspire communities to adopt sustainable practices and reduce waste. 
+                Together, we aim to build a cleaner, more beautiful world.
+            </p>
+        </div>
+    </section>
+    <script>
+
+        // Reveal elements on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.slide-up');
+            
+            const revealOnScroll = () => {
+                elements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add('visible');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger on page load
+        });
+        </script>
+
+</body>
+</html>
