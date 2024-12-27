@@ -12,10 +12,9 @@
 </head>
 
 <body>
-
-    <div class="button">
-        <button class="checkout">Checkout</button>
-
+<main>
+    <div class="button1">
+        <button class="checkout" id="cart" onclick="cart();"></button>
     </div>
 
     <section>
@@ -24,8 +23,8 @@
             <h3>Upcycled Wood Vase</h3>
             <p>Min 10% Off</p>
             <div class="price">
-                <span class="del"><del>&#8377;998</del></span>
-                <span class="strike">&#8377;899</span>
+                <span class="del"><del>&#8377;</del></span>
+                <span class="strike">&#8377;499</span>
             </div>
             <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="add-to-cart">Add to cart</button>
@@ -218,8 +217,9 @@
                 <span class="del"><del>&#8377;1000</del></span>
                 <span class="strike">&#8377;900</span>
             </div>
+            this one
             <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" onclick="fun(); ">Add to cart</button>
             </div>
         </div>
         </div>
@@ -254,10 +254,26 @@
 
 
     </section>
-
+</main>
 
 
     <script>
+        function cart() {
+            document.getElementById("cart").innerHTML= localStorage.getItem(cart);
+        }
+        function fun() {
+          // Retrieve the cart from localStorage or initialize an empty array if none exists
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add the item to the cart array
+    cart.push(item);
+
+    // Store the updated cart in localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Optionally, update the cart display
+    updateCartDisplay();
+        }
         // Get all the "Buy Now" and "Add to Cart" buttons
         const buyNowButtons    = document.querySelectorAll('.buy-now');
         const addToCartButtons = document.querySelectorAll('.add-to-cart');

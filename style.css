@@ -93,3 +93,13 @@
             font-weight: bold;
         }
     
+        .button1{
+            margin-left:1090px;
+            /* border: 1px solid black; */
+            width: 150px;
+            margin-bottom: -70px;
+        }
+        main{
+            /* border: 1px solid black; */
+            margin-top: 80px;
+        }
