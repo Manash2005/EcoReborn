@@ -4,35 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Checkout Final</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Checkout Page</h1>
+    <h1>Final Checkout</h1>
 
-    <div id="cart-items">
-        <!-- Cart items will be displayed here -->
+    <div id="final-cart-items">
+        <!-- Final cart items will be displayed here -->
     </div>
 
-    <div id="total">
-        <h3>Total: ₹<span id="total-price">0</span></h3>
+    <div id="final-total">
+        <h3>Total: ₹<span id="final-total-price">0</span></h3>
     </div>
 
     <script>
         // Retrieve cart data from localStorage
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        // Get the container where cart items will be displayed
-        const cartItemsContainer = document.getElementById('cart-items');
+        // Get the container where final cart items will be displayed
+        const finalCartItemsContainer = document.getElementById('final-cart-items');
         let totalPrice = 0;
 
         // Check if there are items in the cart
         if (cart.length > 0) {
             cart.forEach(item => {
-                // Create a div for each item in the cart
+                // Create a div for each item in the final cart
                 const itemDiv = document.createElement('div');
-                itemDiv.classList.add('cart-item');
+                itemDiv.classList.add('final-cart-item');
                 
                 // Add product name and price to the div
                 itemDiv.innerHTML = `
@@ -41,17 +41,17 @@
                 `;
                 
                 // Append item div to the container
-                cartItemsContainer.appendChild(itemDiv);
+                finalCartItemsContainer.appendChild(itemDiv);
 
                 // Update the total price
                 totalPrice += item.price;
             });
 
             // Update total price on the page
-            document.getElementById('total-price').textContent = totalPrice;
+            document.getElementById('final-total-price').textContent = totalPrice;
         } else {
             // If the cart is empty
-            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            finalCartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
         }
     </script>
 </body>

@@ -12,13 +12,12 @@
 </head>
 
 <body>
-    <button type="button" class="btn btn-primary position-relative">
-        Inbox
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          99+
-          <span class="visually-hidden">unread messages</span>
-        </span>
-      </button>
+
+    <div class="button">
+        <button class="checkout">Checkout</button>
+
+    </div>
+
     <section>
         <div class="card">
             <img src="images/Upcycledwoodenvase.webp" alt="craft1" class="vase">
@@ -256,64 +255,65 @@
 
     </section>
 
+
+
     <script>
         // Get all the "Buy Now" and "Add to Cart" buttons
-const buyNowButtons = document.querySelectorAll('.buy-now');
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const buyNowButtons    = document.querySelectorAll('.buy-now');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    
+        // Item data for each product (for illustration purposes)
+        const items = [
+            { id: 1, name: 'Upcycled Wood Vase', price: 899 },
+            { id: 2, name: 'Coconut Leaves Stick', price: 249 },
+            { id: 3, name: 'Palm Leaf Wall Hanging', price: 399 },
+            { id: 4, name: 'Coconut Shell Candle Holder', price: 149 },
+            { id: 5, name: 'Creative Plastic Bottle', price: 89 },
+            { id: 6, name: 'Paper Lamp', price: 449 },
+            { id: 7, name: 'Romantic Orange Rose', price: 29 },
+            { id: 8, name: 'Egg Shell Craft', price: 149 },
+            { id: 9, name: 'Paper Leaf Wall Hanging', price: 199 },
+            { id: 10, name: 'Glass Bottle Plant Hangings', price: 143 },
+            { id: 11, name: 'Farmer Sculpture', price: 525 },
+            { id: 12, name: 'Coconut Shell Candle Holder', price: 150 }
+        ];
+    
+        // Add event listener for "Buy Now" buttons
+        buyNowButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Redirect to the checkout page
+                window.location.href = 'checkout.html';
+            });
+        });
+    
+        // Add event listener for "Add to Cart" buttons
+        addToCartButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Get the corresponding item for this button
+                const item = items[index];
+    
+                // Store the item in localStorage
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(item);
 
-// Item data for each product (for illustration purposes)
-const items = [
-    { id: 1, name: 'Upcycled Wood Vase', price: 899 },
-    { id: 2, name: 'Coconut Leaves Stick', price: 249 },
-    { id: 3, name: 'Palm Leaf Wall Hanging', price: 399 },
-    { id: 4, name: 'Coconut Shell Candle Holder', price: 149 },
-    { id: 5, name: 'Creative Plastic Bottle', price: 89 },
-    { id: 6, name: 'Paper Lamp', price: 449 },
-    { id: 7, name: 'Romantic Orange Rose', price: 29 },
-    { id: 8, name: 'Egg Shell Craft', price: 149 },
-    { id: 9, name: 'Paper Leaf Wall Hanging', price: 199 },
-    { id: 10, name: 'Glass Bottle Plant Hangings', price: 143 },
-    { id: 11, name: 'Farmer Sculpture', price: 525 },
-    { id: 12, name: 'Coconut Shell Candle Holder', price: 150 }
-];
-
-// Add event listener for "Buy Now" buttons
-buyNowButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Redirect to the checkout page
-        window.location.href = 'checkout.html';
-    });
-});
-
-// Add event listener for "Add to Cart" buttons
-addToCartButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        // Get the corresponding item for this button
-        const item = items[index];
-
-        // Store the item in localStorage
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        // Change button text to "Added"
-        button.textContent = 'Added';
-
-        // Optionally, disable the button to prevent further clicks
-        button.disabled = true;
-
-        // Change the button color to indicate it has been clicked
-        button.style.backgroundColor = '#888'; // Change color to grey or any other indication
-
-        // Display a custom success message in an alert
-        alert(`${item.name} has been successfully added to your cart!`);
-
-        // Change the URL without reloading the page
-        // Example: Add "/cart" to the URL to indicate the cart page
-       
-    });
-});
+                localStorage.setItem('cart', JSON.stringify(cart));
+    
+                // Change button text to "Added"
+                button.textContent = 'Added';
+    
+                // Optionally, disable the button to prevent further clicks
+                button.disabled = true;
+    
+                // Change the button color to indicate it has been clicked
+                button.style.backgroundColor = '#888'; // Change color to grey or any other indication
+    
+                // Display a custom success message in an alert
+                alert(`${item.name} has been successfully added to your cart!`);
+    
+            });
+        });
     </script>
+    
 </body>
 
 </html>

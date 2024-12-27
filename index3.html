@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafts And Decor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <!-- Example product card structure -->
+        <div class="card">
+            <img src="images/Upcycledwoodenvase.webp" alt="craft1" class="vase">
+            <h3>Upcycled Wood Vase</h3>
+            <p>Min 10% Off</p>
+            <div class="price">
+                <span class="del"><del>&#8377;998</del></span>
+                <span class="strike">&#8377;899</span>
+            </div>
+            <div class="button">
+                <button class="buy-now">Buy Now</button>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Other product cards go here -->
+
+        <!-- "Go to Checkout" button that will appear once products are added to the cart -->
+        <div>
+            <button id="go-to-checkout" style="display:none;">Go to Checkout</button>
+        </div>
+    </section>
+
+    <script>
+        // Get all the "Buy Now" and "Add to Cart" buttons
+        const buyNowButtons = document.querySelectorAll('.buy-now');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const goToCheckoutButton = document.getElementById('go-to-checkout');
+
+        // Item data for each product (for illustration purposes)
+        const items = [
+            { id: 1, name: 'Upcycled Wood Vase', price: 899 },
+            // Add other products here
+        ];
+
+        // Add event listener for "Buy Now" buttons
+        buyNowButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Redirect to the checkout page
+                window.location.href = 'checkout.html';
+            });
+        });
+
+        // Add event listener for "Add to Cart" buttons
+        addToCartButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Get the corresponding item for this button
+                const item = items[index];
+
+                // Store the item in localStorage
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Change button text to "Added"
+                button.textContent = 'Added';
+
+                // Optionally, disable the button to prevent further clicks
+                button.disabled = true;
+
+                // Change the button color to indicate it has been clicked
+                button.style.backgroundColor = '#888';
+
+                // Show the "Go to Checkout" button
+                goToCheckoutButton.style.display = 'inline-block';
+            });
+        });
+
+        // Add event listener for "Go to Checkout" button
+        goToCheckoutButton.addEventListener('click', () => {
+            window.location.href = 'checkout3.html';
+        });
+    </script>
+</body>
+
+</html>
