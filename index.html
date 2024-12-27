@@ -74,7 +74,7 @@
             margin-top: -40px;
             color: #e6e6e6;
             background-image: url(images/background-image.jpeg);
-            background-size:cover ;
+            /* background-size:cover ; */
             border: 2px solid black;
         }
 
@@ -160,7 +160,7 @@
 
         .word:hover {
             font-size: 65px;
-            color: rgb(128, 0, 0);
+            color: rgb(243, 117, 0);
         }
 
         .btn-custom {
@@ -175,6 +175,18 @@
         .btn-custom:hover {
             background-color: #45a049;
         }
+        .carousel-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+             color: white;
+              font-size: 24px;
+               font-weight: bold;
+                text-align: center;
+             padding: 10px;
+              border-radius: 5px;
+            text-shadow: 1px 1px 5px black; }
+        .carousel{
+            margin-top: -1em;
+        }
+        
     </style>
 </head>
 <body>
@@ -200,32 +212,7 @@
     <p class="slogan"> <span class="word">Waste</span> <span class="word">to</span> <span class="word">Wonder!</span></p>
     
     <!-- Image Slideshow Section -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/background-image.jpeg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/compost.jpeg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/eco-friendly-product.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"> <div class="carousel-indicators"> <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button> <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button> <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> </div> <div class="carousel-inner"> <div class="carousel-item active"> <img src="images/scenery.jpg" class="d-block w-100" alt="..."> <div class="carousel-caption">Welcome to EcoReborn</div> </div> <div class="carousel-item"> <img src="images/windmill2.jpg" class="d-block w-100" alt="..."> <div class="carousel-caption">Creating Compost from Waste</div> </div> <div class="carousel-item"> <img src="images/scenery.jpg" class="d-block w-100" alt="..."> <div class="carousel-caption">Eco-Friendly Products</div> </div> </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> </div>
 
     <!-- Main Section -->
     <section class="main-section d-flex justify-content-between container my-5">
