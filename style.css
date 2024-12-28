@@ -74,9 +74,10 @@
             transition: all 0.3s ease;
 
         }
-
+        
         .card:hover {
             padding: 15px;
+            background-color: rgb(201, 198, 198);
         }
 
         .vase {

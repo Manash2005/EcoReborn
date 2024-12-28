@@ -20,11 +20,11 @@
         }
         .container {
             width: 70%;
-            margin: 0 auto;
+            margin-left:50px ;
             background-color: #f1f5f2;  
             padding: 20px;
             
-            margin-top: 50px;
+            margin-top: 0px;
         }
         h1 {
             text-align: center;
@@ -87,50 +87,127 @@
             text-shadow: 1px 1px 7px black;
             }
         .sec{
-            background-color: rgb(58, 203, 116);
-            margin-top: 30px;
+            background-color: rgb(38, 130, 75);
+            margin-top: 0px;
             font-size: 20px;
             box-shadow: 3px 4px 0.4em;
         }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            color: white;
+            margin-top: -3em;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .logo-img {
+            width: 15%;
+            height: 15%;
+            /* margin-top: -40px; */
+            /* border: 1px solid black; */
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links li {
+            margin-left: 10px;
+        }
+
+        .nav-links a {
+            color: black;
+            /* background-color: #128C7E; */
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #45a049;
+            font-size: 20px;
+        }
+        .big-container{
+            display: grid;
+            grid-template-columns: 6fr 4fr;
+            margin-top: 60px;
+        }
+
  </style>
 </head>
 <body>
-    
-    <div class="sec">
-      <div class="title">
-        Write to us..
-      </div>
-        <div class="links">
-          <ul>
-           <li class="bi-telephone-outbound">&nbsp;&nbsp;<a href="tel:+1234567890"> &nbsp;+91 9645676563</a></li><br>
-           <li class="bi-envelope-arrow-up">&nbsp;&nbsp;<a href="mailto:someone@example.com"> &nbsp;ecoreborn@gmail.com</a></li><br>
-           <li class="bi-geo-alt-fill">&nbsp;&nbsp;<b>Head office:</b>123, MG Road,Near Trinity Circle,Bangalore, Karnataka - 560001,India</li><br>
-           <li class="bi-geo-alt-fill">&nbsp;&nbsp;<b>Register ofice:</b>456, Indiranagar,Near 100 Feet Road,Bangalore, Karnataka - 560038,India</li><br>
-           <li >Monday – Friday : 09:00 am to 10:00 pm</li>
-        </ul>
-       </div>
-    </div>
-    <div class="container">
-        <h1>Contact Us</h1>
-        <form action="submit_form.php" method="POST">
+    <header>
+        <!-- Logo Section -->
+        <img src="images/Reborn.png" alt="logo" class="logo-img">
+        
+        <!-- Navigation Menu -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="bi bi-house-fill">&nbsp; Home</a></li>
+                <li><a href="home-decor.html">Home Decor</a></li>
+                <li><a href="compost.html">Organic Fertilizer</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="cart.html" class="bi bi-cart"> Cart</a></li>
+                <li><a href="login.html"> Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
 
-             <!-- Message Field -->
-             <label for="message">Tell us more and we will find the best solution for you:</label>
-             <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
- 
-            <!-- Name Field -->
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your name">
-
-            <!-- Email Field -->
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-
-           
-            <!-- Submit Button -->
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+        
+        <div class="big-container">
+            
+            <div class="sec">
+                <div class="title">
+                    Write to us..
+                </div>
+                <div class="links">
+                    <ul>
+                        <li class="bi-telephone-outbound">&nbsp;&nbsp;<a href="tel:+1234567890"> &nbsp;+91 8837088528</a></li><br>
+                        <li class="bi-envelope-arrow-up">&nbsp;&nbsp;<a href="mailto:someone@example.com"> &nbsp;info.ecoreborn@gmail.com</a></li><br>
+                        <li class="bi-geo-alt-fill">&nbsp;&nbsp;<b>Head office:</b>123, MG Road,Near Trinity Circle,Bangalore, Karnataka - 560001,India</li><br>
+                        <li class="bi-geo-alt-fill">&nbsp;&nbsp;<b>Register ofice:</b>456, Indiranagar,Near 100 Feet Road,Bangalore, Karnataka - 560038,India</li><br>
+                        <li >Monday – Friday : 09:00 am to 10:00 pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <h1>Contact Us</h1>
+                <form action="submit_form.php" method="POST">
+                    
+                    <!-- Message Field -->
+                    <label for="message">Tell us more and we will find the best solution for you:</label>
+                    <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+                    
+                    <!-- Name Field -->
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    
+                    <!-- Email Field -->
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    
+                    
+                    <!-- Submit Button -->
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     
 
