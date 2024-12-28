@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            color: white;
+            margin-top: -3em;
+            /* border-bottom: 2px solid #ddd; */
+        }
+
+        .logo-img {
+            width: 15%;
+            height: 15%;
+            /* margin-top: -40px; */
+            /* border: 1px solid black; */
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links li {
+            margin-left: 10px;
+        }
+
+        .nav-links a {
+            color: black;
+            /* background-color: #128C7E; */
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #45a049;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Landing Page Header Section -->
+    <header>
+        <img src="images/Reborn.png" alt="logo" class="logo-img">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="bi bi-house-fill">&nbsp; Home</a></li>
+                <li><a href="home-decor.html">Home Decor</a></li>
+                <li><a href="compost.html">Organic Fertilizer</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="cart.html" class="bi bi-cart">&nbsp; Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Your Cart</h2>
+
+        <div id="cart-items-container">
+            <!-- Cart items will be populated here dynamically -->
+        </div>
+
+        <div id="cart-summary">
+            <p>Total: ₹<span id="total-price">0</span></p>
+            <button onclick="window.location.href = 'checkout.html';">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <script>
+        // Get cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let cartItemsContainer = document.getElementById('cart-items-container');
+        let totalPriceElement = document.getElementById('total-price');
+
+        // Function to update the cart display
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';  // Clear the container
+
+            let total = 0;
+            cartItems.forEach(item => {
+                let cartItemElement = document.createElement('div');
+                cartItemElement.classList.add('cart-item');
+                cartItemElement.innerHTML = `
+                    <p>${item.name} - ₹${item.price} x ${item.quantity}</p>
+                    <p>Subtotal: ₹${item.price * item.quantity}</p>
+                    <button onclick="removeFromCart('${item.name}')">Remove</button>
+                `;
+                cartItemsContainer.appendChild(cartItemElement);
+
+                total += item.price * item.quantity;
+            });
+
+            totalPriceElement.textContent = total;  // Update total price
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(productName) {
+            cartItems = cartItems.filter(item => item.name !== productName);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));  // Update localStorage
+            updateCart();  // Refresh the cart
+        }
+
+        // Call updateCart to display the current cart
+        updateCart();
+    </script>
+
+</body>
+</html>
