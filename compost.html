@@ -39,7 +39,7 @@
                 <span class="strike">&#8377;179</span>
             </div>
             <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart" on-click="addToCart">Add to cart</button>
+                <button class="add-to-cart" data-product-name="Organic Compost" data-product-price="179">Add to cart</button>
             </div>
         </div>
         </div>
@@ -53,7 +53,7 @@
                 <span class="strike">&#8377;249</span>
             </div>
             <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-product-name="Anaerobic Digestate Fertilizer" data-product-price="249">Add to cart</button>
             </div>
         </div>
         </div>
@@ -67,7 +67,7 @@
                 <span class="strike">&#8377;149</span>
             </div>
             <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="add-to-cart">Add to cart</button>
+                <button class="add-to-cart" data-product-name="Vermicompost" data-product-price="149">Add to cart</button>
             </div>
         </div>
         </div>
@@ -81,7 +81,7 @@
                 <span class="strike">&#8377;149</span>
             </div>
             <div class="button">&nbsp; <button class="buy-now">Buy Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="add-to-cart">Add to cart</button>
+            <button class="add-to-cart" data-product-name="Bokashi Fermented Fertilizer" data-product-price="149">Add to cart</button>
             </div>
         </div>
         </div>
@@ -91,11 +91,40 @@
     
 </main>
 
-    <script>
-function addToCart() {
-
-}
+<script>
+    function addToCart(event) {
+        const button = event.target; // Get the button that was clicked
+        const productName = button.getAttribute('data-product-name'); // Get the product name
+        const productPrice = parseFloat(button.getAttribute('data-product-price')); // Get the product price
+    
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        
+        // Check if the item is already in the cart
+        let existingProduct = cartItems.find(item => item.name === productName);
+        
+        if (existingProduct) {
+            existingProduct.quantity += 1; // Increase quantity if already in the cart
+        } else {
+            cartItems.push({
+                name: productName,
+                price: productPrice,
+                quantity: 1
+            });
+        }
+        
+        // Store the updated cart in localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // Notify the user
+        alert(`${productName} has been added to your cart.`);
+    }
+    
+    // Add event listener to all 'Add to cart' buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', addToCart);
+    });
     </script>
+    
 </body>
 
 </html>
